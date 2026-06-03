@@ -10,27 +10,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS for modern UI
-st.markdown("""
-<style>
-    .main {
-        background-color: #f8f9fa;
-    }
-    .stApp {
-        font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3 {
-        color: #1E3A8A;
-    }
-    .metric-card {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-</style>
-""", unsafe_allow_html=True)
 
 st.title("🦠 Interactive Microbiome & Metagenomics Dashboard")
 st.markdown("### By Arshia")
@@ -65,13 +44,13 @@ if df_meta is not None:
     
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown(f'<div class="metric-card"><h3>{len(df_meta)}</h3><p>Total Samples</p></div>', unsafe_allow_html=True)
+        st.metric("Total Samples", len(df_meta))
     with col2:
-        st.markdown(f'<div class="metric-card"><h3>{df_meta["body-site"].nunique()}</h3><p>Body Sites</p></div>', unsafe_allow_html=True)
+        st.metric("Body Sites", df_meta["body-site"].nunique())
     with col3:
-        st.markdown(f'<div class="metric-card"><h3>{df_meta["subject"].nunique()}</h3><p>Subjects</p></div>', unsafe_allow_html=True)
+        st.metric("Subjects", df_meta["subject"].nunique())
     with col4:
-        st.markdown(f'<div class="metric-card"><h3>{len(df_otu.columns)}</h3><p>Unique ASVs</p></div>', unsafe_allow_html=True)
+        st.metric("Unique ASVs", len(df_otu.columns))
 
     st.markdown("### Metadata Snapshot")
     st.dataframe(df_meta.head())

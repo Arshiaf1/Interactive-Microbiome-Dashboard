@@ -1,6 +1,6 @@
 # Interactive Microbiome & Metagenomics Dashboard 🦠
 
-![Dashboard Interface Placeholder](https://via.placeholder.com/1000x500.png?text=Microbiome+Dashboard)
+![Microbiome Dashboard Preview](figures/dashboard_preview.png)
 
 ## Overview
 This repository contains a complete, interactive dashboard for exploring microbiome and metagenomic sequencing results. Developed by **Arshia**, this tool is designed to provide robust bioinformatics analysis with a clean, responsive user interface. The project utilizes real microbiome data to showcase taxonomic composition, alpha/beta diversity, and metadata associations.

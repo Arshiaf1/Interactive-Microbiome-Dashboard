@@ -1,0 +1,19 @@
+name: microbiome-dashboard
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.10
+  - pip
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - jupyter
+  - pip:
+      - streamlit
+      - plotly
+      - scikit-bio
+      - biom-format
